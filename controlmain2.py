@@ -19,7 +19,7 @@ lblTitleBar = Label(windowMain, image=imgTitleBar)
 lblTitleBar.pack(fill=tk.Y, side=tk.TOP)
 
 def goPowerOn():
-    os.system("functions/poweron000.py")
+    os.system("functions/poweron.py")
 
     frameProgressBar = ttk.Frame()
     #frameProgressBar
@@ -42,7 +42,7 @@ def goPowerOn():
 
 
 def goPowerOff():
-    os.system("functions/poweroff000.py")
+    os.system("functions/poweroff.py")
 
     frameProgressBar = ttk.Frame()
     frameProgressBar.pack(expand = True, fill = BOTH)
@@ -114,8 +114,5 @@ btnBlankOff.pack(padx=5, pady=20, side=tk.LEFT)
 
 #btnQuit = tk.Button(windowMain, text = "Quit", command=windowMain.destroy)
 #btnQuit.grid(row=2, column=3)
-
-#btnSettings = tk.Button(windowMain, text="Settings", command = settingsWindow)
-#btnSettings.grid(row=2, column=2)
 
 windowMain.mainloop()

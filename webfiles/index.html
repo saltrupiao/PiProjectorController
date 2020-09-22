@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PiProjectorController Web Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+<div class="container border">
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-global-list" data-toggle="list" href="#list-global" role="tab" aria-controls="global">Global Projector Settings</a>
+                <a class="list-group-item list-group-item-action" id="list-pwron-list" data-toggle="list" href="#list-pwron" role="tab" aria-controls="pwron">Power On</a>
+                <a class="list-group-item list-group-item-action" id="list-pwroff-list" data-toggle="list" href="#list-pwroff" role="tab" aria-controls="pwroff">Power Off</a>
+                <a class="list-group-item list-group-item-action" id="list-blkon-list" data-toggle="list" href="#list-blkon" role="tab" aria-controls="blkon">Blank Screen On</a>
+                <a class="list-group-item list-group-item-action" id="list-blkoff-list" data-toggle="list" href="#list-blkoff" role="tab" aria-controls="blkoff">Blank Screen Off</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-global" role="tabpanel" aria-labelledby="list-global-list">
+                    <form method="get" action="go.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="baudRate">Baud Rate</label>
+                                <input type="number" class="form-control" id="baudRate">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="byteSize">Byte Size</label>
+                                <input type="number" class="form-control" id="byteSize">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="stopBits">Stop Bits</label>
+                                <input type="number" class="form-control" id="stopBits">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="timeout">Timeout</label>
+                                <input type="number" class="form-control" id="timeout">
+                            </div>
+                        </div>
+                        <input type="hidden" value="goGlobal" name="goAction">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="list-pwron" role="tabpanel" aria-labelledby="list-pwron-list">
+                    <form method="get" action="go.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cmdPOn">RS232 Command String</label>
+                                <input type="text" class="form-control" id="cmdPOn">
+                            </div>
+                        </div>
+                        <input type="hidden" value="goCmdPOn" name="goAction">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="list-pwroff" role="tabpanel" aria-labelledby="list-pwroff-list">
+                    <form method="get" action="go.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cmdPOn">RS232 Command String</label>
+                                <input type="text" class="form-control" id="cmdPOff">
+                            </div>
+                        </div>
+                        <input type="hidden" value="goCmdPOff" name="goAction">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="list-blkon" role="tabpanel" aria-labelledby="list-blkon-list">
+                    <form method="get" action="go.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cmdPOn">RS232 Command String</label>
+                                <input type="text" class="form-control" id="cmdBOn">
+                            </div>
+                        </div>
+                        <input type="hidden" value="goCmdBOn" name="goAction">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="list-blkoff" role="tabpanel" aria-labelledby="list-blkoff-list">
+                    <form method="get" action="go.php">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="cmdPOn">RS232 Command String</label>
+                                <input type="text" class="form-control" id="cmdBOff">
+                            </div>
+                        </div>
+                        <input type="hidden" value="goCmdBOff" name="goAction">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
